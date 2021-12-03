@@ -1,0 +1,298 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   isalpha.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/31 15:52:05 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/31 16:07:27 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	isalpha(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!((str[i] >= 'A' && str[i] <= 'Z') \
+		|| (str[i] >= 'a' && str[i] <= 'z')))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 10:01:27 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/27 10:19:19 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	isdigit(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   isalnum.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/31 15:52:05 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/31 16:07:27 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	isalnum(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!((str[i] >= 'A' && str[i] <= 'Z') \
+		|| (str[i] >= 'a' && str[i] <= 'z'))) \
+		|| (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   isprint.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 17:56:31 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/28 16:18:11 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	isprint(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < 32 || str[i] > 126)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 14:48:51 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/27 17:38:20 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	ft_str_is_lowercase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < 'a' || str[i] > 'z')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+#include <unistd.h>
+#include <stdio.h>
+
+int ft_str_is_lowercase(char *str);
+
+int	main(int argc, char**argv)
+{
+	(void)argc;
+	
+	printf("code retour: %d", ft_str_is_lowercase(argv[1]));
+	return 0;
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 17:48:33 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/27 17:51:04 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	ft_str_is_uppercase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < 'A' || str[i] > 'Z')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+#include <unistd.h>
+#include <stdio.h>
+
+int ft_str_is_uppercase(char *str);
+
+int	main(int argc, char**argv)
+{
+	(void)argc;
+	
+	printf("code retour: %d", ft_str_is_uppercase(argv[1]));
+	return 0;
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/28 11:01:23 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/28 13:22:34 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+char	*ft_strupcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+		i++;
+	}
+	return (str);
+}
+#include <unistd.h>
+#include <stdio.h>
+
+char	*ft_strupcase(char *str);
+
+int	main(int argc, char**argv)
+{
+	(void)argc;
+	printf("retour: %s", ft_strupcase(argv[1]));
+	return 0;
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/28 14:29:44 by vbauer            #+#    #+#             */
+/*   Updated: 2021/10/28 14:45:37 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+char	*ft_strlowcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
+		i++;
+	}
+	return (str);
+}
+
+// POUR FICHIER DE TESTS = POINTEUR SUR FONCTIONS 
+
+#include <unistd.h>
+#include <stdio.h>
+int isalpha(char *str);
+
+int	main(int argc, char**argv)
+//int	main(void)
+{
+	(void)argc;
+//	char str[]="1234";
+//	char str[]="coucou";
+//	char str[]="t9&";
+//	char str[]="67t9&";
+//	char str[]=" 9&";
+	
+//	isalpha(argv[1]);
+//	printf("code retour: %d", isalpha(str));
+	printf("code retour: %d", isalpha(argv[1]));
+	return 0;
+}
+//=========
+int isdigit(char *str);
+
+//=========
+int isalnum(char *str);
+
+int	main(int argc, char**argv)
+//int	main(void)
+{
+	(void)argc;
+//	char str[]="1234";
+//	char str[]="coucou";
+//	char str[]="t9&";
+//	char str[]="67t9&";
+//	char str[]=" 9&";
+	
+//	isalnum(argv[1]);
+//	printf("code retour: %d", isalnum(str));
+	printf("code retour: %d", isalnum(argv[1]));
+	return 0;
+}
