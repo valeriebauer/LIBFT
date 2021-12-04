@@ -1,12 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/23 16:17:32 by vbauer            #+#    #+#              #
+#    Updated: 2021/11/24 11:56:57 by vbauer           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+NAME = libft.a
+SRC = *****.c
+INCL = libft.h
+AR = ar rc
+RM = rm -f
+GCC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-main : ft_isdigit_main.c
-	gcc -c -Wall -Wextra -Werror ft_isdigit_main.c
+all: $(NAME)
 
-libft : libft.h
-	gcc -c -Wall -Wextra -Werror libfb.h
+$(NAME):
+	$(GCC) $(FLAGS) -I$(INCL) -o $(NAME) $(SRC)
 
-ft : ft_isdigit.c
-	gcc -c -Wall -Wextra -Werror ft_isdigit.c
+clean:
+	rm -f *.o
 
-clear :
-	ls 
+fclean:
+	rm -f $(NAME)
+
+re: clean all
+     
+.PHONY = re all clean fclean

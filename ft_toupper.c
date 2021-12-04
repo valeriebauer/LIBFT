@@ -15,38 +15,11 @@
 #include <ctype.h>
 #include "libft.h"
 
-
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c < -1 && c != -2147483648)
-		c = c + 256; 
+		c = c + 256;
 	if (c >= 'a' && c <= 'z')
-		c = c - 32; 
-	return(c);
+		c = c - 32;
+	return (c);
 }
-
-int	main(void)
-{
-	int mychr;
-	
-	mychr = 'a';
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
-
-	mychr = '}';
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
-
-	mychr = ' ';
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
-
-	mychr = -12;
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
-	
-	mychr = 2147483647;
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
-
-	mychr = -2147483648;
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
-
-	return (0);
-}
-
