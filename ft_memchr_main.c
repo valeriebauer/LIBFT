@@ -15,6 +15,19 @@
 #include <stddef.h>
 #include "libft.h"
 
+// void *ft_memchr(const void *s, int c, size_t n)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while ((((unsigned char *)s)[i]) && (i < n) && (((unsigned char *)s)[i] != c))
+// 		i++;
+// 	if (((unsigned char *)s)[i]) 
+// 		return (&((unsigned char*)s)[i]);
+// 	else
+// 		return (NULL);
+// }
+
 int main(void)
 {
 printf("void *memchr(const void *s, int c, size_t n);\n");
