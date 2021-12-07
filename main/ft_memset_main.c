@@ -1,21 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memset_main.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 13:00:38 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/29 14:37:25 by vbauer           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include "libft.h"
-
+//*
+//************ ft_main_memset
+//*
 int	main(void)
 {
 	printf("void *memset(void *s, int c, size_t n);\n");

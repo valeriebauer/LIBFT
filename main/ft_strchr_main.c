@@ -1,14 +1,9 @@
-
-//#include <bsd/string.h>
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-#include <ctype.h>
-#include <stddef.h>
-
+//*
+//************ ft_main_strchr
+//*
+int	main(void)
 //char *strchr(const char *s, int c);
 // retourne l adresse du 1er c rencontre dans s
-int	main(void)
 {
 	printf("char *ft_strchr(const char *s, int c);\n");
 

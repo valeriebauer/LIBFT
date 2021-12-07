@@ -1,9 +1,9 @@
-
-#include "libft.h"
-
+//*
+//************ ft_main_strncmp
+//*
+int	main(void)
 //int ft_strncmp(const char *s1, const char *s2, size_t n);
 // retourne soustraction des @ 1ers car differents s1-s2
-int	main(void)
 {
 	printf("int ft_strncmp(const char *s1, const char *s2, size_t n);\n");
 	

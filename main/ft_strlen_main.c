@@ -1,21 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen_main.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 10:08:14 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/25 12:13:06 by vbauer           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <stddef.h>
-#include <string.h>
-#include "libft.h"
-
+// *
+// ************ ft_main_strlen
+// *
+int	main(void)
 //size_t ft_strlen(const char *s)
 //{
 //	int i;
@@ -26,7 +12,6 @@
 //	return (i);
 //}
 
-int main(void)
 {
 	char *x;
 

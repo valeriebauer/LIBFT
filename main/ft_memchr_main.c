@@ -1,20 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memchr_main.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 13:00:38 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/30 15:40:35 by vbauer           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include <stddef.h>
-#include "libft.h"
-
+//*
+//************ ft_main_memchr
+//*
+int	main(void)
 // void *ft_memchr(const void *s, int c, size_t n)
 // {
 // 	size_t	i;
@@ -28,7 +15,6 @@
 // 		return (NULL);
 // }
 
-int main(void)
 {
 printf("void *memchr(const void *s, int c, size_t n);\n");
 /* scans  the  initial n bytes of the memory area pointed to by s for the first instance of c.  

@@ -1,11 +1,9 @@
-
-#include "libft.h"
-
-char	*ft_strrchr(const char *s, int c);
-
+//*
+//************ ft_main_strrchr
+//*
+int	main(void)
 //char *strrchr(const char *s, int c);
 // retourne l adresse du dernier c rencontre dans s
-int	main(void)
 {
 	printf("char *ft_strrchr(const char *s, int c);\n");
 	

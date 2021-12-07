@@ -1,11 +1,10 @@
-
-#include <bsd/string.h>
-#include "libft.h"
-
+//*
+//************ ft_main_strlcpy
+//*
+int	main(void)
 //size_t ft_strlcpy(char *dest, char *src, size_t size);
 // copy src sur dest sur size
 // . ATTENTION ne rien faire si size = 0
-int	main(void)
 {
 	printf("size_t ft_strlcpy(char *dest, char *src, size_t size);\n");
 

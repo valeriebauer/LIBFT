@@ -1,40 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 12:00:18 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/29 17:01:38 by vbauer           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-
+//*
+//************* ft_main_toupper
+//*
 int	main(void)
 {
-	int mychr;
+	int toupper_int;
 	
-	mychr = 'a';
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
+	toupper_int = 'a';
+	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", toupper_int, toupper(toupper_int), ft_toupper(toupper_int));
 
-	mychr = '}';
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
+	toupper_int = '}';
+	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", toupper_int, toupper(toupper_int), ft_toupper(toupper_int));
 
-	mychr = ' ';
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
+	toupper_int = ' ';
+	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", toupper_int, toupper(toupper_int), ft_toupper(toupper_int));
 
-	mychr = -12;
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
+	toupper_int = -12;
+	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", toupper_int, toupper(toupper_int), ft_toupper(toupper_int));
 	
-	mychr = 2147483647;
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
+	toupper_int = 2147483647;
+	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", toupper_int, toupper(toupper_int), ft_toupper(toupper_int));
 
-	mychr = -2147483648;
-	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", mychr, toupper(mychr), ft_toupper(mychr));
+	toupper_int = -2147483648;
+	printf("Param: %d |Ft Native: %d |Ma Ft: %d\n", toupper_int, toupper(toupper_int), ft_toupper(toupper_int));
 
 	return (0);
 }

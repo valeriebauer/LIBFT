@@ -1,21 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove_main.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 13:00:38 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/30 15:40:35 by vbauer           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include "libft.h"
-
-int main(void)
+//*
+//************ ft_main_memmove
+//*
+int	main(void)
 {
 printf("void *memmove(void *dest, const void *src, size_t n);\n");
 // si dest > src cad dest stocke apres src dans la memoire, on remplace par la fin sinon ecrasement

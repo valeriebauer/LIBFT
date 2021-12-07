@@ -1,13 +1,9 @@
-
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include "libft.h"
-
-//iint memcmp(const void *s1, const void *s2, size_t n);
-// retourne soustraction des @ 1ers car differents s1-s2
+//*
+//************ ft_main_memcmp
+//*
 int	main(void)
+//iint memcmp(const void *s1, const void *s2, size_t n);
+// retourne soustraction des @ 1ers car differents s1 - s2
 {
 	printf("int memcmp(const void *s1, const void *s2, size_t n);\n");
 	
