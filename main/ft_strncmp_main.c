@@ -1,6 +1,14 @@
 //*
 //************ ft_main_strncmp
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 //int ft_strncmp(const char *s1, const char *s2, size_t n);
 // retourne soustraction des @ 1ers car differents s1-s2

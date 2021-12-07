@@ -1,9 +1,17 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
 //*
 //************ ft_main_memset
 //*
 int	main(void)
 {
-	printf("void *memset(void *s, int c, size_t n);\n");
+	printf("\n");
+	printf("void *memset(void *s, int c, size_t n);\n\n");
 	/*
 	fills the first n bytes of the memory area pointed to by s with the constant byte c
 	*/
@@ -15,15 +23,15 @@ int	main(void)
 
 // AVEC UN TABLEAU DE CHAR mais bugg avec n > 8
 	printf("Avec un tableau de CAR\n");
-	char s1[]="valerie";
-	char s2[]="valerie";
-//	char s1[]={'a',' ',')'};
-//	char s2[]={'a',' ',')'};
-	size_t n = 3 * sizeof(char); 
+//	char s1[]="valerie";
+//	char s2[]="valerie";
+	char s1[]={'a',' ',')','8'};
+	char s2[]={'b',' ',')','8'};
+//	size_t n = 2 * sizeof(char); 
 //	memset((void *)s1, 'z', n);	
-	memset(s1, 'z', n); 
+	memset(s1, 'z', 2); 
 	printf("Ft Native: %s\n", s1); 	
-	ft_memset(s2, 'z', n);
+	ft_memset(s2, 'z', 2);
 	printf("Ma ft    : %s\n", s2);
 
 	printf("\n");
@@ -33,14 +41,15 @@ int	main(void)
 	int s3[4]={1,78,-244,0};
 	int s4[4]={1,78,-244,0};
 	size_t i = 0; 
-	size_t m = 2 * sizeof(int); // instruction facultative car 1 CAR 1 octet qq systeme
-	memset(s3, '0', m);// remplace 1er elt du tableau par 808464432	(et non par 0)
+	size_t m = 1 * sizeof(int); // instruction facultative car 1 CAR 1 octet qq systeme
+	memset(s3, 2, m);// remplace 1er elt du tableau par 808464432	(et non par 0)
 	while (i < 4)
 	{ 
 		printf("Ft Native: %d\n", s3[i]);
 		i++;
 	}
-	ft_memset(s4, 20, m);// 20 = 1 CAR non imprimable, affiche 336860180  
+	printf("\n");
+	ft_memset(s4, 2, m);// 20 = 1 CAR non imprimable, affiche 336860180  
 	i = 0; 
 	while (i < 4)
 	{ 

@@ -1,6 +1,14 @@
 //*
 //************ ft_main_memchr
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 // void *ft_memchr(const void *s, int c, size_t n)
 // {

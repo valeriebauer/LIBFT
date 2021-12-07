@@ -1,6 +1,14 @@
 //*
 //************ ft_main_isprint
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 {
 	int isprint_int;

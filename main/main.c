@@ -632,4 +632,22 @@ printf("void *memmove(void *dest, const void *src, size_t n);\n");
 
 	return (0);
 }
+//*
+//************* ft_main_toupper
+//*
+{
+	printf("char	*ft_strnstr(const char *s1, const char *s2, size_t len);\n\n");
+	
+	char s1[]="hello world";
+	char s2[]="llo";
 
+	int c = -2;
+	while (c < 14)
+	{
+	printf("n: %d | s1: %s | s2: %s \n", c, s1, s2);
+	printf("Ft Native : %s\n", strnstr(s1, s2, c));
+	printf("Ma Ft     : %s\n\n", ft_strnstr(s1 ,s2, c));
+	c++;
+	}
+	return (0);
+}

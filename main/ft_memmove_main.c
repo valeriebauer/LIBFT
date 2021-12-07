@@ -1,6 +1,14 @@
 //*
 //************ ft_main_memmove
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 {
 printf("void *memmove(void *dest, const void *src, size_t n);\n");

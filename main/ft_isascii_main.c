@@ -2,6 +2,14 @@
 //*
 //************ ft_main_isascii
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 {
 	int isascii_int;

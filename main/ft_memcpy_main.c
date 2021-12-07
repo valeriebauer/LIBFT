@@ -1,6 +1,14 @@
 //*
 //************ ft_main_memcpy
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 {
 printf("void *ft_memcpy(void *dest, const void *src, size_t n)\n");

@@ -1,6 +1,14 @@
 //*
 //************ ft_main_strrchr
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 //char *strrchr(const char *s, int c);
 // retourne l adresse du dernier c rencontre dans s

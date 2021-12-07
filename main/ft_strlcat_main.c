@@ -1,6 +1,14 @@
 //*
 //************ ft_main_strlcat
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 //size_t ft_strlcat(char *dest, char *src, size_t size);
 // copy src sur dest sur size

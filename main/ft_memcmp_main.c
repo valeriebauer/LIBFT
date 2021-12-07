@@ -1,6 +1,14 @@
 //*
 //************ ft_main_memcmp
 //*
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <bsd/string.h>
+#include "../libft.h"
+
 int	main(void)
 //iint memcmp(const void *s1, const void *s2, size_t n);
 // retourne soustraction des @ 1ers car differents s1 - s2
@@ -8,7 +16,7 @@ int	main(void)
 	printf("int memcmp(const void *s1, const void *s2, size_t n);\n");
 	
 	char s1[]="hello";
-	char s2[]="world";
+	char s2[]="heworld";
 	size_t c = 3;
 	//size_t c = 0;
 	printf("n: %ld | s1: %s | s2: %s \n", c, s1, s2);
