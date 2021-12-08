@@ -15,8 +15,8 @@ int	main(void)
 {
 	printf("int memcmp(const void *s1, const void *s2, size_t n);\n");
 	
-	char s1[]="hello";
-	char s2[]="heworld";
+	char s1[]="haello";
+	char s2[]="helloworld";
 	size_t c = 3;
 	//size_t c = 0;
 	printf("n: %ld | s1: %s | s2: %s \n", c, s1, s2);

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:25:07 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/01 15:12:57 by vbauer           ###   ########.fr       */
+/*   Created: 2021/12/06 10:20:44 by vbauer            #+#    #+#             */
+/*   Updated: 2021/12/06 10:21:00 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+char *ft_strdup(const char *s)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s1)[i] == ((unsigned char *)s2)[i])
-			i++;
-		else
-		{
-			if (i%2 == 0)
-				return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-			else
-				return (256*(((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]));
-		}
-	}
-	return (0);
+	size_t s_len;
+	char 	*d;
+	
+	s_len = ft_strlen(s);
+	d = malloc(sizeof(char) * s_len + 1);
+	if (d == NULL)
+		return (NULL);
+	ft_strlcpy(d, s, s_len + 1);
+	return (d);
 }

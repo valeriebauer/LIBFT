@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:25:07 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/01 15:12:57 by vbauer           ###   ########.fr       */
+/*   Created: 2021/12/06 10:20:44 by vbauer            #+#    #+#             */
+/*   Updated: 2021/12/06 10:21:00 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+#include <stdio.h>
+#include <string.h>
+#include "../libft.h"
+#include <ctype.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <bsd/string.h>
+int	main(void)
 {
-	size_t	i;
+	char	*s = "Hello world!";
+	char	*d;
+	char	*s2 = "Hello world!";
+	char	*d2;
 
-	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s1)[i] == ((unsigned char *)s2)[i])
-			i++;
-		else
-		{
-			if (i%2 == 0)
-				return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-			else
-				return (256*(((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]));
-		}
-	}
+	printf("Ft Native s = %s\n", s);
+	d = strdup(s);
+	printf("Ft Native d = %s\n", d);
+
+	printf("\n");
+	printf("Ma Ft s = %s\n", s2);
+	d2 = ft_strdup(s);
+	printf("Ma Ft d = %s\n", d2);
+
 	return (0);
 }
