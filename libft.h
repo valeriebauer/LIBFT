@@ -17,7 +17,7 @@
 #include <stdlib.h>
 //#include <ctype.h>
 //#include <stddef.h>
-//#include <stdio.h>
+#include <stdio.h>
 //#include <string.h>
 //#include <bsd/string.h>
 
@@ -38,6 +38,7 @@ size_t 	ft_strlcat(char *dest, const char *src, size_t size);
 
 void	ft_bzero(void *s, size_t n);
 
+void    *calloc(size_t nmemb, size_t size);
 void	*ft_memset (void *s, int c, size_t n); 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);

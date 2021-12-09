@@ -24,8 +24,3 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
-
-int main(void)
-{
- return 0;
-}

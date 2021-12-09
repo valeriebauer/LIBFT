@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
@@ -23,10 +23,11 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 			i++;
 		else
 		{
-			if (i%2 == 0)
+			if (i % 2 == 0)
 				return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 			else
-				return (256*(((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]));
+				return (256 * (((unsigned char *)s1)[i] \
+				- ((unsigned char *)s2)[i]));
 		}
 	}
 	return (0);

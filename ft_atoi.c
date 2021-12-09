@@ -23,9 +23,9 @@ int	ft_atoi(const char *str)
 	signe = 1;
 	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
 		i++;
-	if ((str[0] == '+') || (str[0] == '-'))
+	if ((str[i] == '+') || (str[i] == '-'))
 	{
-		if (str[0] == '-')
+		if (str[i] == '-')
 			signe = -1;
 		i++;
 	}

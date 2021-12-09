@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 13:00:38 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/29 14:36:14 by vbauer           ###   ########.fr       */
+/*   Created: 2021/12/06 10:20:44 by vbauer            #+#    #+#             */
+/*   Updated: 2021/12/06 10:21:00 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*calloc(size_t nmemb, size_t size);
 {
-	size_t			i;
-	unsigned char	*s2;
-	unsigned char	c2;
-
-	i = 0;
-	s2 = (unsigned char *)s;
-	c2 = (unsigned char)c;
-	if (n == 0)
+	size_t	s_len;
+	char	*d;
+	
+	if (nmemb == 0 || size = 0)
 		return (NULL);
-	while (i < n)
-	{
-		if (s2[i] == c2)
-			return (&s2[i]);
-		i++;
-	}
-	return (NULL);
+	d = malloc(size * nmemb + 1);
+	if (d == NULL)
+		return (NULL);
+	ft_bzero(d, size);
+	return (d);
 }
