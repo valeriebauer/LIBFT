@@ -6,7 +6,7 @@
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:47:55 by vbauer            #+#    #+#             */
-/*   Updated: 2021/12/02 14:59:14 by vbauer           ###   ########.fr       */
+/*   Updated: 2021/12/10 11:53:03 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-//#include <ctype.h>
-//#include <stddef.h>
+#include <ctype.h>
+#include <stddef.h>
 #include <stdio.h>
-//#include <string.h>
-//#include <bsd/string.h>
+#include <string.h>
 
 int     ft_isalpha(int c);
 int     ft_isdigit(int c);
@@ -38,7 +37,7 @@ size_t 	ft_strlcat(char *dest, const char *src, size_t size);
 
 void	ft_bzero(void *s, size_t n);
 
-void    *calloc(size_t nmemb, size_t size);
+void    *ft_calloc(size_t nmemb, size_t size);
 void	*ft_memset (void *s, int c, size_t n); 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);

@@ -16,13 +16,30 @@
 
 int main(void)
 {
-	int	i;
+	char a = 'c';
+	char *b;
+	b = &a;
 
-	i = -100;
-	while (i < 201)
-	{
-		printf("%d / %d \n", i, tolower(i));
-		i++;
-	}
+//	printf("%c \n", *a);
+//	printf("%c \n", a[0]);
+//	printf("%s \n", a);
+//	printf("%p \n", a);
+	printf("%p \n", &a);
+
+
+	printf("%c \n", *b);
+	printf("%c \n", b[0]);
+	printf("%s \n", b);
+	printf("%p \n", b);
+	printf("%p \n", &b);
+
+	//int	i;
+
+	// i = -100;
+	// while (i < 201)
+	// {
+	// 	printf("%d / %d \n", i, tolower(i));
+	// 	i++;
+	// }
 	return (0);
 }
