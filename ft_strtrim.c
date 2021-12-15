@@ -1,28 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/21 13:00:38 by vbauer            #+#    #+#             */
+/*   Updated: 2021/11/30 15:40:35 by vbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int	ft_start_substr(char const *s1, char const *set)
+int	ft_start_substr(char const *s1, char const *set)
 {
-	int i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while ((s1[i] && set[i]) && (s1[i] == set[i]))
-		i++;
+	j = 0;
+	while ((s1[i]) && (set[j]))
+	{
+		if (s1[i] == set[j])
+		{
+			i++;
+			j = 0;
+		}
+		else
+			j++;
+	}
 	return (i);
 }
 
-static int	ft_end_substr(char const *s1, char const *set)
+int	ft_end_substr(char const *s1, char const *set, int i_beg)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = ((int)ft_strlen(s1) - 1);
-	j = ((int)ft_strlen(set) - 1);
-	while ((i >= 0 && j >= 0) && (s1[i] == set[j]))
+	j = 0;
+	while ((i > i_beg) && (set[j]))
 	{
-		i--;
-		j--;
+		if (s1[i] == set[j])
+		{
+			i--;
+			j = 0;
+		}
+		else
+			j++;
 	}
-	return(i);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -35,8 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i_end = 0;
 	len = 0;
 	i_beg = ft_start_substr(s1, set);
-	i_end = ft_end_substr(s1, set);
+	i_end = ft_end_substr(s1, set, i_beg);
 	len = (i_end - i_beg) + 1;
-		
 	return (ft_substr(s1, i_beg, len));
 }
