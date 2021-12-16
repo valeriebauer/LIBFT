@@ -6,25 +6,17 @@
 int main(void)
 {
 //*
-// //**************** substr 
+//**************** split
 //*
-// 	printf("char	*ft_substr(char const *s, unsigned int start, size_t len)\n");
-// 	char	*str;
-// 	int	start;
-// 	size_t	len;
-      	
-// 	// str = "coucou";
-// 	// start = 3;
-// 	// len = 2;
-// 	// printf("str:  %s | start : %d | len : %ld | ft_substr: %s ", str, start, len,>>>
-// 	//  ft_substr(str, start, len));
+	printf("char    **ft_split(char const *s, char c)\n");
 
-// // war-machine
-// 	str = "lorem ipsum dolor sit amet";
-// 	start = 400;
-// 	len = 20;
-// 	printf("str:  %s | start : %d | len : %ld | ft_substr: %s ", str, start, len,>>>
-// 	 ft_substr(str, start, len));
+	//char	*s;
+	char	c; 	
+
+	char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
+	c = '+';
+	//printf("s:  %s | c: %s | ft_split: %s ", s, c, ft_split(s, c));
+	ft_split(s, c);
 
 //*
 //**************** strtrim 
@@ -77,6 +69,27 @@ int main(void)
 	// // char	set[] = "ou";
 
 	// 	printf("s1:  %s | s2: %s | ft_strjoin: %s ", s1, s2, ft_strjoin(s1, s2));
+
+//*
+// //**************** substr 
+//*
+// 	printf("char	*ft_substr(char const *s, unsigned int start, size_t len)\n");
+// 	char	*str;
+// 	int	start;
+// 	size_t	len;
+      	
+// 	// str = "coucou";
+// 	// start = 3;
+// 	// len = 2;
+// 	// printf("str:  %s | start : %d | len : %ld | ft_substr: %s ", str, start, len,>>>
+// 	//  ft_substr(str, start, len));
+
+// // war-machine
+// 	str = "lorem ipsum dolor sit amet";
+// 	start = 400;
+// 	len = 20;
+// 	printf("str:  %s | start : %d | len : %ld | ft_substr: %s ", str, start, len,>>>
+// 	 ft_substr(str, start, len));
 
 	return (0);
 }
