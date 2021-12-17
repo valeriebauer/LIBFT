@@ -12,29 +12,22 @@
 
 #include "libft.h"
 
-size_t ft_str_len(char const *s, char c)
+size_t	ft_str_len(char const *s, char c)
 {
-	int	i;
 	size_t	str_len;
 
-	i = 0;
 	str_len = 0;
-	while ((s[i]) && (s[i] != c))
-	{
+	while (s[str_len] != c && s[str_len])
 		str_len++;
-		i++;
-	}
 	return (str_len);
 }
 
-size_t ft_str_nb(char const *s, char c)
+size_t	ft_str_nb(char const *s, char c)
 {
-	// char	*s2;
-	int	i;
+	int		i;
 	size_t	str_nb;
-	int str_flag;
+	int		str_flag;
 
-	// s2 =(char *)s;
 	i = 0;
 	str_nb = 0;
 	str_flag = 0;
@@ -47,75 +40,53 @@ size_t ft_str_nb(char const *s, char c)
 		}
 		else if ((str_flag == 1) && (s[i] == c))
 			str_flag = 0;
-			// s2[i] = '\0';
 		i++;
 	}
 	return (str_nb);
 }
 
-char *ft_str_cpy(s, c)
+char	*ft_str_cpy(char const *s, size_t	str_len)
 {
-	size_t	str_len;
+	size_t	i;
 	char	*str;
 
-	str_len = ft_str_len(s, c);
+	i = 0;
 	str = malloc(sizeof(char) * (str_len + 1));
 	if (str == NULL)
 		return (NULL);
-	str = ft_memcpy(str, s, str_len);
+	while (i < str_len)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	j;
-	char	**tab1;
-	char	*tab2;
 	size_t	str_len;
+	char	**tab;
+	int		j;
 
-	//printf("\nft_str_nb(s, sep): %ld\n", ft_str_nb(s, c));
-	//tab1[0][3] = {{"tout"}, {"va"}, {"bien"}};
-	// str_len = (size_t)(memchr(char const *s, char c) - s);
-	
-	i = 0;
 	j = 0;
 	if (s == NULL)
 		return (NULL);
-	tab1 = (char **)malloc(sizeof(char *) * (ft_str_nb(s, c) + 1))
-	if (tab1 == NULL)
+	tab = (char **)malloc(sizeof(char *) * (ft_str_nb(s, c) + 1));
+	if (tab == NULL)
 		return (NULL);
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] && s[i] != c)
+		while (*s == c && *s)
+			s++;
+		if (*s != c && *s)
 		{
-			tab2[j] = ft_str_cpy(s, c);
+			str_len = ft_str_len(s, c);
+			tab[j] = ft_str_cpy(s, str_len);
 			j++;
-			while (s[i] && s[i] == c)
-				i++;
+			s = s + str_len;
 		}
 	}
-	return (tab2);
-}
-
-int main(void)
-{
-//*
-//**************** split
-//*
-	printf("char    **ft_split(char const *s, char c)\n");
-
-	//char	*s;
-	char	c; 	
-
-	// char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
-	char s[] = "tout++va++bien+";
-	c = '+';
-	//printf("s:  %s | c: %s | ft_split: %s ", s, c, ft_split(s, c));
-	ft_split(s, c);
-
-	//*
-	return (0);
+	tab[j] = NULL;
+	return (tab);
 }

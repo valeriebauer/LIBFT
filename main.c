@@ -5,18 +5,43 @@
 
 int main(void)
 {
+
 //*
 //**************** split
 //*
 	printf("char    **ft_split(char const *s, char c)\n");
 
-	//char	*s;
+	char	**s2;
 	char	c; 	
-
-	char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
+	int	i;
+	// char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
+	char s[] = "+++tou++va+";
+	//char	s2[3][4] = {{"tout"}, {"va"}, {"bien"}};
 	c = '+';
-	//printf("s:  %s | c: %s | ft_split: %s ", s, c, ft_split(s, c));
-	ft_split(s, c);
+	
+	s2 = ft_split(s, c);
+	
+	i = 0;
+	//printf("s:  %s | c: %c | ft_split: %s ", s, c, s2[i]);
+	while (s2[i])
+	{
+		printf("tab[%d] %s\n", i, s2[i]);
+		i++;
+	}
+	free (*s2);
+
+//*
+//**************** split
+//*
+	// printf("char    **ft_split(char const *s, char c)\n");
+
+	// //char	*s;
+	// char	c; 	
+
+	// char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
+	// c = '+';
+	// //printf("s:  %s | c: %s | ft_split: %s ", s, c, ft_split(s, c));
+	// ft_split(s, c);
 
 //*
 //**************** strtrim 
