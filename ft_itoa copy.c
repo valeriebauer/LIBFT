@@ -18,13 +18,12 @@ int    ft_nb_len(int n)
     int    len;
     unsigned int nb; 
     len = 0;
+    nb = n;
     if (n < 0)
     {
         nb = -n;
         len++;
     }
-    else
-        nb = n;
     while (nb > 9)
     {
         nb = nb / 10;
@@ -40,23 +39,22 @@ char    *ft_itoa(int n)
     char    *s;
     int    nb_len;
 
+    nb = n;
     nb_len = ft_nb_len(n);
     s = malloc(sizeof(char) * nb_len + 1);
     if (s == NULL)
         return (NULL);
-    if (n == 0)
-        s[0] = '0';
     s[nb_len] = '\0';
     if (n < 0)
     {
-        nb = -(long int)n;
+        nb = -nb;
         s[0] = '-';
+        nb_len--;
     }
-    else
-        nb = n;
-    while (nb > 0)
+    nb_len--;
+    while (nb_len >= 0)
     {        
-        s[nb_len - 1] = nb % 10 + 48;
+        s[nb_len] = nb % 10 + 48;
         nb = nb / 10;
         nb_len--;
     }
