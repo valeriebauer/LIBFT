@@ -7,28 +7,38 @@ int main(void)
 {
 
 //*
+//**************** itoa
+//
+	printf("char    *ft_itoa(int n);\n");
+int n;
+
+n = -1234;
+//n = -2147483648;
+printf("n: %s\n", ft_itoa(n));
+
+//*
 //**************** split
 //*
-	printf("char    **ft_split(char const *s, char c)\n");
+	//printf("char    **ft_split(char const *s, char c)\n");
 
-	char	**s2;
-	char	c; 	
-	int	i;
-	// char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
-	char s[] = "+++tou++va+";
-	//char	s2[3][4] = {{"tout"}, {"va"}, {"bien"}};
-	c = '+';
+	//char	**s2;
+	//char	c; 	
+	//int	i;
+	//// char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
+	//char s[] = "+++tou++va+";
+	////char	s2[3][4] = {{"tout"}, {"va"}, {"bien"}};
+	//c = '+';
 	
-	s2 = ft_split(s, c);
+	//s2 = ft_split(s, c);
 	
-	i = 0;
-	//printf("s:  %s | c: %c | ft_split: %s ", s, c, s2[i]);
-	while (s2[i])
-	{
-		printf("tab[%d] %s\n", i, s2[i]);
-		i++;
-	}
-	free (*s2);
+	//i = 0;
+	////printf("s:  %s | c: %c | ft_split: %s ", s, c, s2[i]);
+	//while (s2[i])
+	//{
+	//	printf("tab[%d] %s\n", i, s2[i]);
+	//	i++;
+	//}
+	//free (*s2);
 
 //*
 //**************** split
