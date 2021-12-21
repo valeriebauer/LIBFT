@@ -31,7 +31,6 @@ size_t	ft_str_nb(char const *s, char c)
 	str_nb = 0;
 	while (s[i])
 	{	
-			printf("str_nb ********* str_nb: %ld", str_nb);
 		if (s[i] == c)
 			i++;
 		else
@@ -41,7 +40,6 @@ size_t	ft_str_nb(char const *s, char c)
 				i++;
 		}
 	}
-				printf("str_nb ********* str_nb: %ld", str_nb);
 	return (str_nb);
 }
 
@@ -56,29 +54,15 @@ char	*ft_str_cpy(char	**tab, char const *s, size_t str_len, size_t str_nb)
 	{
 		while (str_nb--)
 			free(tab[str_nb]);
+		free(tab);
 		return (NULL);
 	}
 	while (i < str_len)
 	{
-				printf("str_cpy ******* str_len: %ld\n", str_len);
 		str[i] = s[i];
 		i++;
 	}
 	str[i] = '\0';
-	//tab[str_nb] = str;
-
-	//while (str_len-- > 0)
-	//{
-	//		printf("str_c\n", *s);
-	//	*str = *s;len: %ld\n", str_len);
-	//		printf("*s: %
-	//		printf("*str: %c\n", *str);
-	//	str++;
-	//	s++;
-	//}
-	//*str = '\0';
-	//printf("str avant return: %s\n", str);
-	printf("str_cpy ******* str: %s\n", str);
 	return (str);
 }
 
@@ -89,10 +73,10 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	int		j;
 
-	str_nb = ft_str_nb(s, c);
-	j = 0;
 	if (s == NULL)
 		return (NULL);
+	str_nb = ft_str_nb(s, c);
+	j = 0;
 	tab = (char **)malloc(sizeof(char *) * (str_nb + 1));
 	if (tab == NULL)
 		return (NULL);
@@ -104,10 +88,7 @@ char	**ft_split(char const *s, char c)
 		if (*s != c && *s)
 		{
 			str_len = ft_str_len(s, c);
-				printf("\nsplit ******* str_nb: %ld\n", str_nb);
-				printf("split ******* str_len: %ld\n", str_len);
-			tab[j] = ft_str_cpy(tab, s, str_len, str_nb);
-			j++;
+			tab[j++] = ft_str_cpy(tab, s, str_len, str_nb);
 			s = s + str_len;
 		}
 		str_nb--;

@@ -36,6 +36,10 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+#	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
 clean:
 	$(RM) *.o
 

@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+//#include <string.h>
+//#include <ctype.h>
 
 int main(void)
 {
@@ -12,8 +14,9 @@ int main(void)
 	printf("char    *ft_itoa(int n);\n");
 int n;
 
-n = -1234;
-//n = 1234;
+n = -10;
+//n = -2147483648LL;
+// n = 1234;
 //n = -2147483648;
 printf("n: %s\n", ft_itoa(n));
 
@@ -30,10 +33,16 @@ printf("n: %s\n", ft_itoa(n));
 	// //c = '+';
 	// //char s[] = "ccc";
 	// //c = 'c';
-	// char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
-	// c = ' ';
-	// //char s[] = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
-	// //c = ' ';
+	/*
+	char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. \
+	Suspendisse";
+	c = ' ';
+	char s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. \
+	Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. \
+	Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, \
+	euismod non, mi.";
+	*/
+	// c = 'i';
 		
 	// s2 = ft_split(s, c);
 	
@@ -41,7 +50,7 @@ printf("n: %s\n", ft_itoa(n));
 	// //printf("s:  %s | c: %c | ft_split: %s ", s, c, s2[i]);
 	// while (s2[i])
 	// {
-	// 	printf("main ******** tab[%d] %s\n", i, s2[i]);
+	// 	printf("\nmain ******** tab[%d] %s\n", i, s2[i]);
 	// 	i++;
 	// }
 	// 		printf("main ******** tab[%d] %s\n", i, s2[i]);
@@ -54,7 +63,7 @@ printf("n: %s\n", ft_itoa(n));
 	// //char	*s;
 	// char	c; 	
 
-	// char s[] = "tout++va++bien++++++dans+le+meilleur+++++des+mondes";
+	// char s[] = "+tout++va++bien++ ++++dans+le+meilleur+++++des+mondes+";
 	// c = '+';
 	// //printf("s:  %s | c: %s | ft_split: %s ", s, c, ft_split(s, c));
 	// ft_split(s, c);
