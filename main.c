@@ -7,6 +7,13 @@
 
 int main(void)
 {
+//*
+//**************** putchar_fd
+//
+	printf("void	ft_putchar_fd(char c, int fd);\n");
+int n;
+
+printf("n: %c  putchar_fd: \n", ft_putchar_fd('j', n));
 
 //*
 //**************** itoa
