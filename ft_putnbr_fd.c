@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:16:25 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/24 16:57:57 by vbauer           ###   ########.fr       */
+/*   Updated: 2021/12/22 16:16:39 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int	nb;
-
-	if (n >= 0)
-		nb = (long int)n;
-	else
+	if (n == -2147483648)
 	{
-		nb = -(long int)n;
-	}
-	while (nb > 0)
-	{
-		ft_putchar(nb % 10 + 48, fd);
-		nb = nb / 10;
+		write (fd, "-2147483648", 11);
+		return ;
 	}
 	if (n < 0)
-		ft_putchar('-', fd);
+	{
+		n = -n;
+		ft_putchar_fd('-', fd);
+	}
+	if (n > 9)
+		ft_putnbr_fd((n / 10), fd);
+	ft_putchar_fd((n % 10 + 48), fd);
 }
-

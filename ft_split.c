@@ -91,7 +91,6 @@ char	**ft_split(char const *s, char c)
 			tab[j++] = ft_str_cpy(tab, s, str_len, str_nb);
 			s = s + str_len;
 		}
-//		str_nb--;
 	}
 	return (tab);
 }
