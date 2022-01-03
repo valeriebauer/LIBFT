@@ -6,13 +6,13 @@
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:09:31 by vbauer            #+#    #+#             */
-/*   Updated: 2021/12/22 18:18:08 by vbauer           ###   ########.fr       */
+/*   Updated: 2022/01/03 17:06:17 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nb_len(int n)
+static int	ft_nb_len(int n)
 {
 	int				len;
 	unsigned int	nb;

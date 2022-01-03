@@ -6,54 +6,82 @@
 #    By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 16:17:32 by vbauer            #+#    #+#              #
-#    Updated: 2021/12/22 17:52:41 by vbauer           ###   ########.fr        #
+#    Updated: 2022/01/03 18:20:31 by vbauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
-#SRC = $(wildcard *.c)
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
-ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
-ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_strdup.c ft_calloc.c ft_substr.c \
-ft_strtrim.c ft_strjoin.c ft_split.c ft_itoa.c \
-ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strmapi.c ft_striteri.c \
-# ft_lstnew.c \ ft_lstadd_front.c ft_lstsize.c \ ft_lstlast.c \ 
-# ft_lstadd_back ft_lstdelone.c \ ft_lstclear.c \ ft_lstiter.c \ ft_lstmap.c \  
 
-#INCL = libft.h
-AR = ar rcs
+SRCS = ft_isalpha.c \
+ft_isdigit.c \
+ft_isalnum.c \
+ft_isascii.c \
+ft_isprint.c \
+ft_strlen.c \
+ft_memset.c \
+ft_bzero.c \
+ft_memcpy.c \
+ft_memmove.c \
+ft_strlcpy.c \
+ft_strlcat.c \
+ft_toupper.c \
+ft_tolower.c \
+ft_strchr.c \
+ft_strrchr.c \
+ft_strncmp.c \
+ft_memchr.c \
+ft_memcmp.c \
+ft_strnstr.c \
+ft_atoi.c \
+ft_calloc.c \
+ft_strdup.c \
+ft_substr.c \
+ft_strjoin.c \
+ft_strtrim.c \
+ft_split.c \
+ft_itoa.c \
+ft_strmapi.c \
+ft_striteri.c \
+ft_putchar_fd.c \
+ft_putstr_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c
+
+BONUS = ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c 
+
+OBJS = $(SRCS:.c=.o)
+
+OBJSBONUS = $(BONUS:.c=.o)
+
+CC = gcc
+
 RM = rm -f
-GCC = clang
+
 FLAGS = -Wall -Wextra -Werror
 
-OBJ = $(SRC:.c=.o);
+all : $(NAME)
 
-all: $(NAME)
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
-.c.o: $(SRC)
-	$(GCC) -c $(FLAGS) $(SRC)
+bonus : $(OBJS) $(OBJSBONUS)
+	ar rc $(NAME) $(OBJS) $(OBJSBONUS)
 
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+%.o : %.c libft.h
+	$(CC) $(FLAGS) -o $@ -c $<
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+.PHONY: clean fclean re all bonus
 
-clean:
-	$(RM) *.o
+clean :
+	$(RM) $(OBJS) $(OBJSBONUS) 
 
-fclean: clean
+fclean : clean
 	$(RM) $(NAME)
 
-re: fclean all
-     
-#.PHONY = re all clean fclean
-
-####   cree les .o fichier/fichier
-#%.o: %.c  
-#	$(GCC) $(FLAGS) -c $< -o $@
-
-####   cree les .o en bloc
-#.c.o:
-#	$(GCC) -c $(FLAGS) $(INCL) $(SRC)
+re : fclean all

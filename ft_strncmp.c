@@ -6,11 +6,11 @@
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:25:07 by vbauer            #+#    #+#             */
-/*   Updated: 2021/11/01 15:12:57 by vbauer           ###   ########.fr       */
+/*   Updated: 2022/01/03 18:29:10 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,13 +6,13 @@
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:00:38 by vbauer            #+#    #+#             */
-/*   Updated: 2021/12/23 11:48:13 by vbauer           ###   ########.fr       */
+/*   Updated: 2022/01/03 17:08:24 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_start_substr(char const *s1, char const *set)
+static int	ft_start_substr(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -32,7 +32,7 @@ int	ft_start_substr(char const *s1, char const *set)
 	return (i);
 }
 
-int	ft_end_substr(char const *s1, char const *set, int i_beg)
+static int	ft_end_substr(char const *s1, char const *set, int i_beg)
 {
 	int	i;
 	int	j;
