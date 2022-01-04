@@ -6,7 +6,7 @@
 #    By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 16:17:32 by vbauer            #+#    #+#              #
-#    Updated: 2022/01/03 18:20:31 by vbauer           ###   ########.fr        #
+#    Updated: 2022/01/04 18:10:28 by vbauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -71,9 +71,9 @@ $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 bonus : $(OBJS) $(OBJSBONUS)
-	ar rc $(NAME) $(OBJS) $(OBJSBONUS)
+	ar rc $(NAME) $^
 
-%.o : %.c libft.h
+%.o : %.c
 	$(CC) $(FLAGS) -o $@ -c $<
 
 .PHONY: clean fclean re all bonus

@@ -6,7 +6,7 @@
 /*   By: vbauer <vbauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:09:31 by vbauer            #+#    #+#             */
-/*   Updated: 2022/01/03 17:39:27 by vbauer           ###   ########.fr       */
+/*   Updated: 2022/01/04 19:22:08 by vbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static size_t	ft_strnb(char const *s, char c)
 	return (strnb);
 }
 
-static char	*ft_str_cpy(char **tab, char const *s, size_t strlen, size_t strnb)
+static char	*ft_str_cpy(char const *s, size_t strlen)
 {
 	size_t	i;
 	char	*str;
@@ -51,12 +51,7 @@ static char	*ft_str_cpy(char **tab, char const *s, size_t strlen, size_t strnb)
 	i = 0;
 	str = malloc(sizeof(char) * (strlen + 1));
 	if (str == NULL)
-	{
-		while (strnb--)
-			free(tab[strnb]);
-		free(tab);
 		return (NULL);
-	}
 	while (i < strlen)
 	{
 		str[i] = s[i];
@@ -66,31 +61,39 @@ static char	*ft_str_cpy(char **tab, char const *s, size_t strlen, size_t strnb)
 	return (str);
 }
 
+char	**ft_clear(char **tab, size_t j)
+{
+	while (--j <= 0)
+		free(tab[j]);
+	free(tab);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	size_t	strnb;
 	size_t	strlen;
 	char	**tab;
 	int		j;
 
 	if (s == NULL)
 		return (NULL);
-	strnb = ft_strnb(s, c);
-	j = 0;
-	tab = (char **)malloc(sizeof(char *) * (strnb + 1));
+	j = -1;
+	tab = (char **)malloc(sizeof(char *) * (ft_strnb(s, c) + 1));
 	if (tab == NULL)
 		return (NULL);
-	tab[strnb] = NULL;
-	while (strnb--)
+	while (*s)
 	{
 		while (*s == c && *s)
 			s++;
 		if (*s != c && *s)
 		{
 			strlen = ft_s_strlen(s, c);
-			tab[j++] = ft_str_cpy(tab, s, strlen, strnb);
+			tab[++j] = ft_str_cpy(s, strlen);
+			if (tab[j] == NULL)
+				return (ft_clear(tab, j));
 			s = s + strlen;
 		}
 	}
+	tab[++j] = NULL;
 	return (tab);
 }
